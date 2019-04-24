@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Menu</title>
+  <!-- Функции реализующие переходы на страници -->
+	<script type="text/javascript">
+		function toIn() {window.location.href = "in.html"} // Функция перехода на страницу ввода изображения 
+		function toOut() {window.location.href = "out.html"} // Функция перехода на страницу дешифровки
+	</script>
+	<!-- Класс Реализующий кнопки в меню -->
+	<style type="text/css">
+   button.menuBut {
+    /* Это параметры для браузеров */
+    background: -moz-linear-gradient(#00BBD6, #EBFFFF); /* moz-префикс для Firefox.Остальное-переход градиента от 1 цвета к 2. */
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF)); /* webkit-префикс для Chrome, Safari, Opera.Остальное для определния того же градиента цветов. */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF'); /* Устанавливает фильтр на цвета градиента:как начальные так и нонечные.  */
+    /* ********** */
+    padding: 70px 70px; /* Размер кнопок */
+    /* Закоментируйте возле каждого что что делает */
+    color: #333; /* Определяет цвет */
+    -moz-border-radius: 5px; /* Устанавливает для браузера Firefox радиус скругления углов */
+    -webkit-border-radius: 5px; /* Устанавливает для браузеров Chrome, Safari, Opera радиус скругления углов */
+    border-radius: 5px; /* Устанавливает стандартный радиус скругления углов */
+    border: 1px solid #666; /* Парамерты самой рамки */
+   }
+   .button1 {
+     margin-left: 10%;
+    /*margin - это отступ от краёв экрана, можно сделать как в px так и в % */
+    margin-right: 0%;
+    margin-top: 17%;
+
+   }
+   .button2 {
+    margin-top: -14.2%;  /* 91px - высота блока*/
+    margin-left: 54%;
+   }
+/* Изменение цвета кнопок в пассивном режиме*/
+   .menuBut
+{
+    opacity:1; /* Помутнение кнопок */
+}
+.menuBut:hover /* При наведении на кнопку */
+{
+    opacity:0.7;
+    box-shadow:0px 0px 7px;
+} background:#53a7ea;
+}
+/* Изменение цвета кнопок при нажатии*/
+button:hover { background: linear-gradient(#f57171, #EBFFFF); } /* При наведении на кнопку */
+button:active { background: linear-gradient(#f57171, #EBFFFF); } /* При нажатии на кнопку */   
+   /* .shadow{
+      background: £fc0;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5)
+      padding: 10px;
+    } */
+
+  </style>
+
+</head>
+<body background="29577.jpg">
+  <!-- Кнопки меню -->
+
+  <div class='button1'><button class="menuBut" onclick="toIn();"><h2>Добавить Цифровой Водяной Знак</h2></button></div> <!--div создаёт невидимый блок который можно перемещать -->
+  <div class='button2'><button class="menuBut" onclick="toOut();"><h2>Изъять цифровой водяной знак</h2></button></div>
+  
+</body>
+</html>

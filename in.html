@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+  <title>Input</title>
+  <script>
+  function previewFile() {
+    var preview = document.querySelector('img');
+    //var-локальная переменная
+    //document.querySelector помогает искать файлы по заданным значениям
+    var file    = document.querySelector('input[type=file]').files[0];
+    //input[type=file] доступно для выбора документы только типа 'файлы'
+    //следовательно заносим это в переменную
+    var reader  = new FileReader();
+
+    reader.onloadend = function () { 
+    //повторяющаяся функция, сработает даже если не выполнилась в первый раз
+      preview.src = reader.result; 
+    }
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      preview.src = "";
+    }
+  }
+</script>
+</head>
+<body>
+  <img src="" height="200" alt="Предпросмотр картинки..."><br>
+  <input type="file" onchange="previewFile()"> 
+  <!--создаёт саму кнопку для загрузки файла -->
+</body>
+</html>
